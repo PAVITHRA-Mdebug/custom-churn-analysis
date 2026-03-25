@@ -34,7 +34,8 @@ if uploaded_file is None:
     st.warning("⚠️ Please upload a CSV file to continue")
     st.stop()
 
-df = pd.read_csv(uploaded_file)
+df = pd.read_csv(uploaded_file, encoding='utf-8-sig')  # Handles BOM from Excel
+
 
 # ------------------------------
 # Validate Columns
